@@ -1,0 +1,8 @@
+// Cloudflare Worker — yalnızca statik dosya sunar (prerender çıktısı). Kod yok.
+{
+  "name": "alifuatcalik",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist/alifuatcalik/browser"
+  }
+}
