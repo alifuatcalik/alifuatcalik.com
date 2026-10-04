@@ -11,11 +11,12 @@
 - **Görsel:** onaylanmış prototip `docs/prototype/index.html` (artifact: https://claude.ai/artifact/RKLmbKG2oP9NyM6yrjbaoF). Zinc nötrler + mor vurgu (#7333CC / dark #B899FF); fontlar Bricolage Grotesque (başlık), Geist (gövde), Geist Mono. İmza öğesi: hero'da `ng build` raporu (9,4 MB → 2,04 MB).
 - **İçerik kaynağı:** kullanıcının CV'si (Eylül 2026). Telefon numarası sitede yok.
 - **Kütüphane:** ilk aşamada kullanılmıyor; site sade Angular + SCSS.
+- **Repo:** `alifuatcalik/alifuatcalik.com`, public. `alifuatcalik/alifuatcalik` GitHub profil README'si olarak kalır (siteye link sonradan eklenebilir).
 
 ## Yapılacaklar (sırayla — her madde ayrı branch)
 1. [x] Proje iskeleti (`ng new`, SCSS, routing, SSR/prerender) — build doğrulandı
-2. [ ] **Git + GitHub:** `git init` yapıldı, commit yok. İlk commit kullanıcı onayıyla main'e; GitHub repo (`alifuatcalik/alifuatcalik.com`, public/private kararı kullanıcıda) `gh repo create` ile, onayla
-3. [ ] **Statik çıktı:** `angular.json` › `outputMode: "static"` (şu an `server`); `server.ts` / express gerekmiyorsa kaldır — Cloudflare Pages statik dosya sunar
+2. [x] **Git + GitHub:** ilk commit main'de (`chore: initial project scaffold`); public repo https://github.com/alifuatcalik/alifuatcalik.com
+3. [x] **Statik çıktı:** `outputMode: "static"`; `server.ts`, `express`, `@types/express` kaldırıldı. Çıktı `dist/alifuatcalik/browser` (prerender, `server/` yok)
 4. [ ] **Prototip → Angular:** token'lar `styles.scss`'e; bölümler component olarak (`hero`, `work`, `experience`, `skills`, `services`, `contact`, `site-header`, `site-footer`); içerik TS veri dosyalarında (TR/EN)
 5. [ ] **i18n:** TR + EN. Seçenek A: `@angular/localize` (Angular resmi, derleme zamanı, `/tr` `/en` ayrı çıktı). Seçenek B: tek build + basit sinyal tabanlı sözlük (prototipteki gibi). Kullanıcıya sor; SEO için A daha iyi
 6. [ ] **Tema:** light/dark (sistem + manuel), seçim `localStorage`'da
@@ -27,5 +28,4 @@
 - İletişimde hangi e-posta? (`alif.calik@gmail.com` prototipte; domain'li adres kurulursa o)
 - Şirket ürün adı (Noctua) sitede geçsin mi?
 - CV indirilebilir PDF olarak eklensin mi?
-- GitHub repo public mi private mı?
 - Kullanıcının fotoğrafı eklenecek mi?
