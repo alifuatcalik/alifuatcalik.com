@@ -1,0 +1,58 @@
+:host {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 10;
+  display: block;
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.header {
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: var(--header-h);
+  }
+
+  &__mark {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__mark-icon {
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    background: var(--accent);
+    display: inline-block;
+    transform: rotate(45deg);
+  }
+
+  &__nav {
+    display: flex;
+    gap: 18px;
+    margin-left: auto;
+    font-size: 14px;
+
+    @media (max-width: 760px) {
+      display: none;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: var(--muted);
+
+    &:hover {
+      color: var(--fg);
+    }
+  }
+}

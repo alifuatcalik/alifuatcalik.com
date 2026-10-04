@@ -1,0 +1,10 @@
+<div class="wrap header__inner">
+  <a class="header__mark" href="#top" [attr.aria-label]="site.name">
+    <i class="header__mark-icon" aria-hidden="true"></i>{{ site.mark }}
+  </a>
+  <nav class="header__nav" [attr.aria-label]="site.navLabel[lang()]">
+    @for (item of nav; track item.href) {
+      <a class="header__link" [href]="item.href">{{ item.label[lang()] }}</a>
+    }
+  </nav>
+</div>

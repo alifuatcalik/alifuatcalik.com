@@ -1,0 +1,23 @@
+<div class="wrap">
+  <div class="contact">
+    <div>
+      <h2 class="sec-head__title contact__title">{{ contact.title[lang()] }}</h2>
+      <p class="contact__body">{{ contact.body[lang()] }}</p>
+    </div>
+    <ul class="contact__links">
+      @for (link of contact.links; track link.href) {
+        <li>
+          <a
+            class="contact__link"
+            [href]="link.href"
+            [attr.target]="link.external ? '_blank' : null"
+            [attr.rel]="link.external ? 'noopener' : null"
+          >
+            <span>{{ link.label[lang()] }}</span>
+            <span class="contact__value">{{ link.display }}</span>
+          </a>
+        </li>
+      }
+    </ul>
+  </div>
+</div>

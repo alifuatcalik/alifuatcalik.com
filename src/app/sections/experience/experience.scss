@@ -1,0 +1,46 @@
+.timeline {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.job {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  gap: 24px;
+  padding-block: 22px;
+  border-bottom: 1px solid var(--line);
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  @media (max-width: 700px) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 6px;
+  }
+
+  &__when {
+    font: 13px/1.5 var(--font-mono);
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 2px;
+    letter-spacing: -0.015em;
+  }
+
+  &__where {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 0 0 10px;
+  }
+}

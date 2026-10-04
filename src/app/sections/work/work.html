@@ -1,0 +1,38 @@
+<div class="wrap">
+  <div class="sec-head">
+    <h2 class="sec-head__title">{{ head.title[lang()] }}</h2>
+    <p class="sec-head__note">{{ head.note[lang()] }}</p>
+  </div>
+
+  <div class="work">
+    @for (item of cases; track item.title.en) {
+      <article class="case" [class.case--feature]="item.stats">
+        <div class="case__main">
+          <div class="case__top">
+            <span class="case__org">{{ item.org[lang()] }}</span>
+            @if (item.chip) {
+              <span class="chip chip--live">{{ item.chip }}</span>
+            }
+          </div>
+          <h3 class="case__title">{{ item.title[lang()] }}</h3>
+          <p class="case__body">{{ item.body[lang()] }}</p>
+          <ul class="stack">
+            @for (tech of item.stack; track tech) {
+              <li class="stack__item">{{ tech }}</li>
+            }
+          </ul>
+        </div>
+        @if (item.stats; as stats) {
+          <dl class="case__stats">
+            @for (stat of stats; track stat.value) {
+              <div class="case__stat">
+                <dt class="case__stat-value">{{ stat.value }}</dt>
+                <dd class="case__stat-label">{{ stat.label[lang()] }}</dd>
+              </div>
+            }
+          </dl>
+        }
+      </article>
+    }
+  </div>
+</div>
