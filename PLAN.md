@@ -23,7 +23,7 @@
 5. [x] **i18n:** metinler `src/app/content/i18n/tr.json` + `en.json` (`en`'in şekli `tr`'ye göre build'de denetlenir); `/` = TR, `/en` = EN, ikisi de prerender. Dil adresten okunur (`LanguageService`), header'da TR/EN linki
 6. [ ] **Tema:** light/dark (sistem + manuel), seçim `localStorage`'da
 7. [x] **SEO & paylaşım:** dile özel `<title>`, description, canonical, `og:*`; `hreflang`, JSON-LD (Person), `sitemap.xml`, `robots.txt`, favicon (svg/ico/apple-touch), `404.html` (`not_found_handling: "404-page"`). OG kartı `docs/og/og-card.html` → `bash docs/og/render.sh`; ikonlar `bash docs/og/render-icons.sh`
-8. [x] **Yayın:** Cloudflare **Worker** (statik assets, `wrangler.jsonc`) ← GitHub `main`, her merge'de otomatik deploy. Domain `alifuatcalik.com` + `www` (Redirect Rule: www → root, 301), Always Use HTTPS, min TLS 1.2. `/en` → `/en/` (Cloudflare klasör yönlendirmesi). `.node-version` = 22, `packageManager` = npm@11.21.0
+8. [x] **Yayın:** Cloudflare **Worker** (statik assets, `wrangler.jsonc`) ← GitHub `main`, her merge'de otomatik deploy. Domain `alifuatcalik.com` + `www` (Redirect Rule: www → root, 301), Always Use HTTPS, min TLS 1.2. `/en` → `/en/` (Cloudflare klasör yönlendirmesi). `.node-version` = 22.14.0 (tam sürüm), `packageManager` = npm@11.21.0
 9. [ ] **E-posta (isteğe bağlı):** Cloudflare Email Routing → `ali@alifuatcalik.com` → Gmail
 
 ## Açık sorular (kullanıcıya)
