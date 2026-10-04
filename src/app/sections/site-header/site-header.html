@@ -1,10 +1,26 @@
 <div class="wrap header__inner">
-  <a class="header__mark" href="#top" [attr.aria-label]="site.name">
-    <i class="header__mark-icon" aria-hidden="true"></i>{{ site.mark }}
+  <a
+    class="header__mark"
+    [routerLink]="language.current().path"
+    fragment="top"
+    [attr.aria-label]="c().site.name"
+  >
+    <i class="header__mark-icon" aria-hidden="true"></i>{{ c().site.mark }}
   </a>
-  <nav class="header__nav" [attr.aria-label]="site.navLabel[lang()]">
-    @for (item of nav; track item.href) {
-      <a class="header__link" [href]="item.href">{{ item.label[lang()] }}</a>
+  <nav class="header__nav" [attr.aria-label]="c().site.navLabel">
+    @for (item of c().nav; track item.id) {
+      <a class="header__link" [routerLink]="language.current().path" [fragment]="item.id">
+        {{ item.label }}
+      </a>
     }
   </nav>
+  <a
+    class="header__lang"
+    [routerLink]="language.alternate().path"
+    [attr.hreflang]="language.alternate().code"
+    [attr.lang]="language.alternate().code"
+    [attr.aria-label]="c().site.switchLabel"
+  >
+    {{ language.alternate().code.toUpperCase() }}
+  </a>
 </div>

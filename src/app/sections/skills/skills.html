@@ -1,13 +1,13 @@
 <div class="wrap">
   <div class="sec-head">
-    <h2 class="sec-head__title">{{ head.title[lang()] }}</h2>
+    <h2 class="sec-head__title">{{ c().skills.title }}</h2>
   </div>
 
   <div class="skills">
-    @for (skill of skills; track skill.title.en) {
+    @for (skill of c().skills.items; track $index) {
       <div class="skill">
-        <h3 class="skill__title">{{ skill.title[lang()] }}</h3>
-        <p class="skill__body">{{ skill.body[lang()] }}</p>
+        <h3 class="skill__title">{{ skill.title }}</h3>
+        <p class="skill__body">{{ skill.body }}</p>
       </div>
     }
   </div>

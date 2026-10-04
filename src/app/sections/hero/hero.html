@@ -1,37 +1,41 @@
 <div class="wrap hero__inner">
   <div>
-    <span class="hero__eyebrow">{{ hero.eyebrow[lang()] }}</span>
-    <h1 class="hero__title">{{ name }}</h1>
-    <p class="hero__role"><b>{{ hero.role }}</b> · {{ hero.roleStack }}</p>
-    <p class="hero__lede">{{ hero.lede[lang()] }}</p>
+    <span class="hero__eyebrow">{{ c().hero.eyebrow }}</span>
+    <h1 class="hero__title">{{ c().site.name }}</h1>
+    <p class="hero__role"><b>{{ c().hero.role }}</b> · {{ c().hero.roleStack }}</p>
+    <p class="hero__lede">{{ c().hero.lede }}</p>
     <div class="hero__cta">
-      <a class="btn btn--primary" href="#contact">{{ hero.ctaPrimary[lang()] }} →</a>
-      <a class="btn" href="#work">{{ hero.ctaSecondary[lang()] }}</a>
+      <a class="btn btn--primary" [routerLink]="language.current().path" fragment="contact">
+        {{ c().hero.ctaPrimary }} →
+      </a>
+      <a class="btn" [routerLink]="language.current().path" fragment="work">
+        {{ c().hero.ctaSecondary }}
+      </a>
     </div>
     <ul class="hero__meta">
-      @for (item of hero.meta; track $index) {
-        <li>{{ item[lang()] }}</li>
+      @for (item of c().hero.meta; track $index) {
+        <li>{{ item }}</li>
       }
     </ul>
   </div>
 
-  <figure class="build" [attr.aria-label]="build.ariaLabel">
+  <figure class="build" [attr.aria-label]="c().build.ariaLabel">
     <div class="build__bar" aria-hidden="true">
       <span class="build__dot"></span><span class="build__dot"></span><span class="build__dot"></span>
-      <em class="build__title">{{ build.title }}</em>
+      <em class="build__title">{{ c().build.title }}</em>
     </div>
     <div class="build__body">
       <div class="build__cmd">
-        <span class="build__dim">$</span> {{ build.command }} <b class="build__flag">{{ build.flag }}</b>
+        <span class="build__dim">$</span> {{ c().build.command }} <b class="build__flag">{{ c().build.flag }}</b>
       </div>
-      <div class="build__dim build__chunk">{{ build.chunk }}</div>
-      @for (row of build.rows; track row.variant) {
+      <div class="build__dim build__chunk">{{ c().build.chunk }}</div>
+      @for (row of c().build.rows; track row.value) {
         <div class="build__row">
-          <span [class.build__dim]="row.variant === 'before'">{{ row.label[lang()] }}</span>
+          <span [class.build__dim]="!row.accent">{{ row.label }}</span>
           <div class="build__meter">
             <i
               class="build__fill"
-              [class.build__fill--after]="row.variant === 'after'"
+              [class.build__fill--after]="row.accent"
               [style.width.%]="row.percent"
             ></i>
           </div>
@@ -39,8 +43,8 @@
         </div>
       }
       <div class="build__wins">
-        @for (win of build.wins; track win.value) {
-          <span><b class="build__win">{{ win.value }}</b> {{ win.label[lang()] }}</span>
+        @for (win of c().build.wins; track win.value) {
+          <span><b class="build__win">{{ win.value }}</b> {{ win.label }}</span>
         }
       </div>
     </div>

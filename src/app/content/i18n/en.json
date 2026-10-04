@@ -1,0 +1,208 @@
+{
+  "meta": {
+    "title": "Ali Fuat Çalık — Frontend Developer · Angular",
+    "description": "Frontend developer building enterprise products with Angular. Performance, modernization, design systems."
+  },
+  "site": {
+    "name": "Ali Fuat Çalık",
+    "mark": "alifuatcalik",
+    "domain": "alifuatcalik.com",
+    "navLabel": "On this page",
+    "switchLabel": "Türkçe'ye geç"
+  },
+  "nav": [
+    { "id": "work", "label": "Work" },
+    { "id": "experience", "label": "Experience" },
+    { "id": "services", "label": "Services" },
+    { "id": "contact", "label": "Contact" }
+  ],
+  "hero": {
+    "eyebrow": "Open to new projects",
+    "role": "Frontend Developer",
+    "roleStack": "Angular",
+    "lede": "I've spent 4 years building enterprise products with Angular. I like modernizing large codebases, making slow apps fast, and laying foundations teams can confidently build on.",
+    "ctaPrimary": "Get in touch",
+    "ctaSecondary": "See my work",
+    "meta": ["Isparta, Türkiye", "Remote / Hybrid", "Angular 21 · Signals"]
+  },
+  "build": {
+    "ariaLabel": "Noctua main bundle: 9.4 MB → 2.04 MB",
+    "title": "noctua — build report",
+    "command": "ng build",
+    "flag": "--stats-json",
+    "chunk": "Initial chunk · main",
+    "rows": [
+      { "label": "before", "value": "9.40 MB", "percent": 100, "accent": false },
+      { "label": "after", "value": "2.04 MB", "percent": 21.7, "accent": true }
+    ],
+    "wins": [
+      { "value": "−78%", "label": "main bundle" },
+      { "value": "3.5 MB → 772 KB", "label": "eager JS" },
+      { "value": "3.3 s → 1.7 s", "label": "load" }
+    ]
+  },
+  "work": {
+    "title": "Selected work",
+    "note": "Work with measurable outcomes. Product details of enterprise projects are kept general.",
+    "cases": [
+      {
+        "org": "Birtech · Noctua",
+        "chip": "2025 —",
+        "title": "Speeding up and modernizing an enterprise monitoring platform",
+        "body": "A large Angular SPA for data-center monitoring, localized in four languages. I moved eight modules to route-level lazy loading, deferred heavy scripts to first use, and rewrote 50+ pages onto Signals, typed reactive forms and an SDK I generated from the OpenAPI spec.",
+        "stack": ["Angular 21", "Signals", "OpenAPI SDK", "Karma · Jasmine", "VitePress"],
+        "stats": [
+          { "value": "−78%", "label": "main bundle" },
+          { "value": "1.7 s", "label": "load (was 3.3 s)" },
+          { "value": "700+", "label": "issues · 35 releases" },
+          { "value": "150+", "label": "test plans" }
+        ]
+      },
+      {
+        "org": "Birtech · Noctua",
+        "chip": "",
+        "title": "Session lifecycle and a single state layer",
+        "body": "Auto-login, idle timeout with warning, silent token refresh, cross-tab sync and a circuit breaker for backend outages across six services. I moved state kept in three places into one layer and removed full-page reloads.",
+        "stack": ["JWT", "RxJS", "Signals"],
+        "stats": []
+      },
+      {
+        "org": "Birtech · Noctua",
+        "chip": "",
+        "title": "Energy management and KPI modules",
+        "body": "Designed end to end on the frontend: energy nodes, cost records, per-outlet PDU consumption, a reporting set of seven chart and table types, and KPI threshold management.",
+        "stack": ["ApexCharts", "Data grid", "CDK Drag & Drop"],
+        "stats": []
+      },
+      {
+        "org": "Open source · in progress",
+        "chip": "Angular",
+        "title": "Angular component library",
+        "body": "50+ Signals-based components with their own palette, light/dark theming, WCAG contrast checks and a separate demo app. Going public soon.",
+        "stack": ["Angular 21", "Signals", "Design tokens"],
+        "stats": []
+      },
+      {
+        "org": "Freelance · Ervam Su İnşaat",
+        "chip": "",
+        "title": "Company website and appointment system",
+        "body": "A bilingual, mobile-first PWA for a construction company in Isparta. Request forms turn into WhatsApp messages; appointment requests are approved from an admin panel.",
+        "stack": ["Next.js", "React", "Tailwind", "PWA"],
+        "stats": []
+      }
+    ]
+  },
+  "experience": {
+    "title": "Experience",
+    "cta": "Request CV",
+    "jobs": [
+      {
+        "when": "Jan 2025 — Present",
+        "title": "Birtech Teknoloji",
+        "where": "Frontend Developer · Eskişehir (Remote)",
+        "points": [
+          "Cut the main bundle by 78%; brought load time from 3.3 s to 1.7 s.",
+          "Wrote a Node generator that produces a typed TypeScript SDK from the OpenAPI spec.",
+          "Set up unit testing, architecture decision records and the docs site from scratch.",
+          "Migrated 72 tables from jQuery DataTables to an in-house data grid; removed two legacy dependencies."
+        ]
+      },
+      {
+        "when": "Dec 2022 — Dec 2024",
+        "title": "Rapider AI",
+        "where": "Frontend Developer · Remote",
+        "points": [
+          "Responsive components and UX improvements on a low-code software platform.",
+          "State management with NgRx; built a new admin module end to end in a modular multi-project setup."
+        ]
+      },
+      {
+        "when": "Aug — Sep 2022",
+        "title": "Mergentech",
+        "where": "Frontend Developer (Intern) · Eskişehir",
+        "points": ["An Angular form builder and drag-and-drop form editor."]
+      },
+      {
+        "when": "2015 — 2022",
+        "title": "B.Sc. Computer Engineering",
+        "where": "Eskişehir Osmangazi University",
+        "points": []
+      }
+    ]
+  },
+  "skills": {
+    "title": "Skills",
+    "items": [
+      {
+        "title": "Angular",
+        "body": "Angular 21, Signals, standalone, typed reactive forms, RxJS, lazy loading, guards, interceptors, change detection, CDK"
+      },
+      {
+        "title": "UI",
+        "body": "Design systems, component libraries, light/dark theming, CSS custom properties, responsive UI, ApexCharts, Konva"
+      },
+      {
+        "title": "Data & integration",
+        "body": "REST, OpenAPI, SDK generation, JWT & refresh token, session management, i18n, PDF / Excel export"
+      },
+      {
+        "title": "Testing & quality",
+        "body": "Karma, Jasmine, coverage, test planning, regression baselines"
+      },
+      {
+        "title": "Process & tooling",
+        "body": "Git, monorepo, Jenkins, GitHub Actions, performance profiling, ADRs, VitePress, Compodoc"
+      },
+      {
+        "title": "Languages",
+        "body": "TypeScript, JavaScript, HTML, SCSS · also Next.js / React"
+      }
+    ]
+  },
+  "services": {
+    "title": "What I can do for you",
+    "note": "For freelance and project-based work.",
+    "items": [
+      {
+        "title": "Company websites & PWAs",
+        "body": "Fast, mobile-first, bilingual sites with business-specific flows like forms, bookings and admin panels."
+      },
+      {
+        "title": "Angular application development",
+        "body": "Enterprise dashboards and business apps: end-to-end modules, API integration, session and access management."
+      },
+      {
+        "title": "Performance & modernization",
+        "body": "Bundle analysis, lazy loading, migration to Signals and standalone, removing legacy dependencies."
+      },
+      {
+        "title": "Design systems & component libraries",
+        "body": "Token-based theming, light/dark, accessible components and documentation."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Let's work together",
+    "body": "Reach out about a project, a role, or just to talk Angular. I usually reply within one business day.",
+    "links": [
+      {
+        "label": "Email",
+        "href": "mailto:alif.calik@gmail.com",
+        "display": "alif.calik@gmail.com",
+        "external": false
+      },
+      {
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/in/alifuatcalik/",
+        "display": "in/alifuatcalik",
+        "external": true
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/alifuatcalik",
+        "display": "alifuatcalik",
+        "external": true
+      }
+    ]
+  }
+}

@@ -47,6 +47,24 @@
     }
   }
 
+  &__lang {
+    font: 500 12px/1 var(--font-mono);
+    padding: 7px 9px;
+    border-radius: 7px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--fg);
+    text-decoration: none;
+
+    &:hover {
+      border-color: var(--faint);
+    }
+
+    @media (max-width: 760px) {
+      margin-left: auto;
+    }
+  }
+
   &__link {
     text-decoration: none;
     color: var(--muted);
