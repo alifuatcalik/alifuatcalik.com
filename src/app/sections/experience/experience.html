@@ -1,0 +1,25 @@
+<div class="wrap">
+  <div class="sec-head">
+    <h2 class="sec-head__title">{{ head.title[lang()] }}</h2>
+    <a class="btn" href="#contact">{{ head.cta[lang()] }}</a>
+  </div>
+
+  <ol class="timeline">
+    @for (job of jobs; track job.title.en) {
+      <li class="job">
+        <div class="job__when">{{ job.when[lang()] }}</div>
+        <div>
+          <h3 class="job__title">{{ job.title[lang()] }}</h3>
+          <p class="job__where">{{ job.where[lang()] }}</p>
+          @if (job.points.length) {
+            <ul class="bullets">
+              @for (point of job.points; track $index) {
+                <li>{{ point[lang()] }}</li>
+              }
+            </ul>
+          }
+        </div>
+      </li>
+    }
+  </ol>
+</div>

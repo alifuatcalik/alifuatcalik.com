@@ -17,7 +17,7 @@
 1. [x] Proje iskeleti (`ng new`, SCSS, routing, SSR/prerender) — build doğrulandı
 2. [x] **Git + GitHub:** ilk commit main'de (`chore: initial project scaffold`); public repo https://github.com/alifuatcalik/alifuatcalik.com
 3. [x] **Statik çıktı:** `outputMode: "static"`; `server.ts`, `express`, `@types/express` kaldırıldı. Çıktı `dist/alifuatcalik/browser` (prerender, `server/` yok)
-4. [ ] **Prototip → Angular:** token'lar `styles.scss`'e; bölümler component olarak (`hero`, `work`, `experience`, `skills`, `services`, `contact`, `site-header`, `site-footer`); içerik TS veri dosyalarında (TR/EN)
+4. [x] **Prototip → Angular:** token'lar `styles.scss`'te; bölümler `src/app/sections/*` component'leri; içerik `src/app/content/*.ts` (`Localized` = `{ tr, en }`), aktif dil `LanguageService.lang` sinyali (şimdilik sabit `tr`). Dil/tema düğmeleri 5. ve 6. adımda
 5. [ ] **i18n:** TR + EN. Seçenek A: `@angular/localize` (Angular resmi, derleme zamanı, `/tr` `/en` ayrı çıktı). Seçenek B: tek build + basit sinyal tabanlı sözlük (prototipteki gibi). Kullanıcıya sor; SEO için A daha iyi
 6. [ ] **Tema:** light/dark (sistem + manuel), seçim `localStorage`'da
 7. [ ] **SEO & paylaşım:** `<title>`, meta description, Open Graph görseli, `hreflang`, `sitemap.xml`, `robots.txt`, favicon

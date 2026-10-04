@@ -1,0 +1,16 @@
+<div class="wrap">
+  <div class="sec-head">
+    <h2 class="sec-head__title">{{ head.title[lang()] }}</h2>
+    <p class="sec-head__note">{{ head.note[lang()] }}</p>
+  </div>
+
+  <div class="services">
+    @for (service of services; track service.title.en; let i = $index) {
+      <div class="svc">
+        <span class="svc__n" aria-hidden="true">{{ i + 1 | number: '2.0-0' }}</span>
+        <h3 class="svc__title">{{ service.title[lang()] }}</h3>
+        <p class="svc__body">{{ service.body[lang()] }}</p>
+      </div>
+    }
+  </div>
+</div>
