@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { SITE } from '../../content/site';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { LanguageService } from '../../core/language';
 
 @Component({
   selector: 'app-site-footer',
@@ -8,6 +8,6 @@ import { SITE } from '../../content/site';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SiteFooter {
-  protected readonly site = SITE;
+  protected readonly c = inject(LanguageService).content;
   protected readonly year = new Date().getFullYear();
 }

@@ -1,15 +1,15 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { LanguageService } from '../../core/language';
-import { NAV, SITE } from '../../content/site';
 
 @Component({
   selector: 'app-site-header',
+  imports: [RouterLink],
   templateUrl: './site-header.html',
   styleUrl: './site-header.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SiteHeader {
-  protected readonly lang = inject(LanguageService).lang;
-  protected readonly site = SITE;
-  protected readonly nav = NAV;
+  protected readonly language = inject(LanguageService);
+  protected readonly c = this.language.content;
 }

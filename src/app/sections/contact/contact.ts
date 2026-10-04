@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { LanguageService } from '../../core/language';
-import { CONTACT } from '../../content/contact';
 
 @Component({
   selector: 'app-contact',
@@ -10,6 +9,5 @@ import { CONTACT } from '../../content/contact';
   host: { class: 'block', id: 'contact' },
 })
 export class Contact {
-  protected readonly lang = inject(LanguageService).lang;
-  protected readonly contact = CONTACT;
+  protected readonly c = inject(LanguageService).content;
 }

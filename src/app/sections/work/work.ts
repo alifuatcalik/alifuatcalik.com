@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { LanguageService } from '../../core/language';
-import { CASES, WORK_HEAD } from '../../content/work';
 
 @Component({
   selector: 'app-work',
@@ -10,7 +9,5 @@ import { CASES, WORK_HEAD } from '../../content/work';
   host: { class: 'block', id: 'work' },
 })
 export class Work {
-  protected readonly lang = inject(LanguageService).lang;
-  protected readonly head = WORK_HEAD;
-  protected readonly cases = CASES;
+  protected readonly c = inject(LanguageService).content;
 }

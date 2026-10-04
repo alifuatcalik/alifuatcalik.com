@@ -11,6 +11,7 @@
 - **Görsel:** onaylanmış prototip `docs/prototype/index.html` (artifact: https://claude.ai/artifact/RKLmbKG2oP9NyM6yrjbaoF). Zinc nötrler + mor vurgu (#7333CC / dark #B899FF); fontlar Bricolage Grotesque (başlık), Geist (gövde), Geist Mono. İmza öğesi: hero'da `ng build` raporu (9,4 MB → 2,04 MB).
 - **İçerik kaynağı:** kullanıcının CV'si (Eylül 2026). Telefon numarası sitede yok.
 - **Kütüphane:** ilk aşamada kullanılmıyor; site sade Angular + SCSS.
+- **i18n:** paketsiz; `tr.json` / `en.json`, adresler `/` (TR) ve `/en` (EN). `@angular/localize` kullanılmıyor.
 - **Repo:** `alifuatcalik/alifuatcalik.com`, public. `alifuatcalik/alifuatcalik` GitHub profil README'si olarak kalır (siteye link sonradan eklenebilir).
 
 ## Yapılacaklar (sırayla — her madde ayrı branch)
@@ -18,7 +19,7 @@
 2. [x] **Git + GitHub:** ilk commit main'de (`chore: initial project scaffold`); public repo https://github.com/alifuatcalik/alifuatcalik.com
 3. [x] **Statik çıktı:** `outputMode: "static"`; `server.ts`, `express`, `@types/express` kaldırıldı. Çıktı `dist/alifuatcalik/browser` (prerender, `server/` yok)
 4. [x] **Prototip → Angular:** token'lar `styles.scss`'te; bölümler `src/app/sections/*` component'leri; içerik `src/app/content/*.ts` (`Localized` = `{ tr, en }`), aktif dil `LanguageService.lang` sinyali (şimdilik sabit `tr`). Dil/tema düğmeleri 5. ve 6. adımda
-5. [ ] **i18n:** TR + EN. Seçenek A: `@angular/localize` (Angular resmi, derleme zamanı, `/tr` `/en` ayrı çıktı). Seçenek B: tek build + basit sinyal tabanlı sözlük (prototipteki gibi). Kullanıcıya sor; SEO için A daha iyi
+5. [x] **i18n:** metinler `src/app/content/i18n/tr.json` + `en.json` (`en`'in şekli `tr`'ye göre build'de denetlenir); `/` = TR, `/en` = EN, ikisi de prerender. Dil adresten okunur (`LanguageService`), header'da TR/EN linki
 6. [ ] **Tema:** light/dark (sistem + manuel), seçim `localStorage`'da
 7. [ ] **SEO & paylaşım:** `<title>`, meta description, Open Graph görseli, `hreflang`, `sitemap.xml`, `robots.txt`, favicon
 8. [ ] **Yayın:** Cloudflare Pages ← GitHub repo; build komutu `npm run build`, çıktı `dist/alifuatcalik/browser`; custom domain `alifuatcalik.com` + `www` yönlendirmesi

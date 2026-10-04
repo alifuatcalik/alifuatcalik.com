@@ -1,0 +1,208 @@
+{
+  "meta": {
+    "title": "Ali Fuat Çalık — Frontend Developer · Angular",
+    "description": "Angular üzerine kurumsal ürünler geliştiren Frontend Developer. Performans, modernizasyon, design system."
+  },
+  "site": {
+    "name": "Ali Fuat Çalık",
+    "mark": "alifuatcalik",
+    "domain": "alifuatcalik.com",
+    "navLabel": "Sayfa içi",
+    "switchLabel": "Switch to English"
+  },
+  "nav": [
+    { "id": "work", "label": "İşler" },
+    { "id": "experience", "label": "Deneyim" },
+    { "id": "services", "label": "Hizmetler" },
+    { "id": "contact", "label": "İletişim" }
+  ],
+  "hero": {
+    "eyebrow": "Yeni projelere açığım",
+    "role": "Frontend Developer",
+    "roleStack": "Angular",
+    "lede": "Angular üzerine 4 yıldır kurumsal ürünler geliştiriyorum. Büyük kod tabanlarını modernize etmeyi, yavaş uygulamaları hızlandırmayı ve ekiplerin üzerine güvenle geliştirebileceği temeller kurmayı seviyorum.",
+    "ctaPrimary": "İletişime geç",
+    "ctaSecondary": "İşlerime bak",
+    "meta": ["Isparta, Türkiye", "Remote / Hibrit", "Angular 21 · Signals"]
+  },
+  "build": {
+    "ariaLabel": "Noctua main bundle: 9,4 MB → 2,04 MB",
+    "title": "noctua — build report",
+    "command": "ng build",
+    "flag": "--stats-json",
+    "chunk": "Initial chunk · main",
+    "rows": [
+      { "label": "önce", "value": "9.40 MB", "percent": 100, "accent": false },
+      { "label": "sonra", "value": "2.04 MB", "percent": 21.7, "accent": true }
+    ],
+    "wins": [
+      { "value": "−78%", "label": "main bundle" },
+      { "value": "3.5 MB → 772 KB", "label": "eager JS" },
+      { "value": "3.3 s → 1.7 s", "label": "açılış" }
+    ]
+  },
+  "work": {
+    "title": "Seçilmiş işler",
+    "note": "Ölçülebilir sonuç veren işler. Kurumsal projelerde ürün detayları genel tutuldu.",
+    "cases": [
+      {
+        "org": "Birtech · Noctua",
+        "chip": "2025 —",
+        "title": "Kurumsal izleme platformunu hızlandırmak ve modernize etmek",
+        "body": "Veri merkezleri için dört dile lokalize, büyük ölçekli bir Angular SPA. Sekiz modülü route bazlı lazy loading'e taşıdım, ağır script'leri ilk kullanıma erteledim; 50'den fazla sayfayı Signals, typed reactive form ve OpenAPI'den ürettiğim SDK desenine yeniden yazdım.",
+        "stack": ["Angular 21", "Signals", "OpenAPI SDK", "Karma · Jasmine", "VitePress"],
+        "stats": [
+          { "value": "−78%", "label": "main bundle" },
+          { "value": "1.7 s", "label": "açılış (önce 3.3 s)" },
+          { "value": "700+", "label": "issue · 35 sürüm" },
+          { "value": "150+", "label": "test planı" }
+        ]
+      },
+      {
+        "org": "Birtech · Noctua",
+        "chip": "",
+        "title": "Oturum yaşam döngüsü ve tek state katmanı",
+        "body": "Altı servis üzerinde auto-login, uyarılı idle timeout, sessiz token yenileme, sekmeler arası senkronizasyon ve backend kesintileri için circuit breaker. Üç ayrı yerde tutulan state'i tek katmana taşıyıp tam sayfa reload kalıbını kaldırdım.",
+        "stack": ["JWT", "RxJS", "Signals"],
+        "stats": []
+      },
+      {
+        "org": "Birtech · Noctua",
+        "chip": "",
+        "title": "Enerji yönetimi ve KPI modülleri",
+        "body": "Enerji node'ları, maliyet kayıtları, PDU outlet bazlı tüketim, yedi grafik ve tablo tipinden oluşan raporlama seti ve KPI eşik yönetimini arayüz tarafında uçtan uca kurguladım.",
+        "stack": ["ApexCharts", "Data grid", "CDK Drag & Drop"],
+        "stats": []
+      },
+      {
+        "org": "Açık kaynak · geliştiriliyor",
+        "chip": "Angular",
+        "title": "Angular component library",
+        "body": "Signals tabanlı, 50'den fazla component; kendi renk paleti, light/dark tema sistemi, WCAG kontrast kontrolü ve ayrı bir demo uygulaması. Yakında public olacak.",
+        "stack": ["Angular 21", "Signals", "Design tokens"],
+        "stats": []
+      },
+      {
+        "org": "Freelance · Ervam Su İnşaat",
+        "chip": "",
+        "title": "Kurumsal web sitesi ve randevu sistemi",
+        "body": "Isparta'da hizmet veren bir inşaat firması için iki dilli, mobil uyumlu PWA. Talep formları WhatsApp mesajına dönüşüyor; randevu talepleri yönetim panelinden onaylanıyor.",
+        "stack": ["Next.js", "React", "Tailwind", "PWA"],
+        "stats": []
+      }
+    ]
+  },
+  "experience": {
+    "title": "Deneyim",
+    "cta": "CV iste",
+    "jobs": [
+      {
+        "when": "Oca 2025 — Halen",
+        "title": "Birtech Teknoloji",
+        "where": "Frontend Developer · Eskişehir (Remote)",
+        "points": [
+          "Main bundle'ı %78 küçülttüm; açılış süresini 3,3 sn'den 1,7 sn'ye indirdim.",
+          "OpenAPI şemasından typed TypeScript SDK üreten bir Node generator yazdım.",
+          "Unit test altyapısını, mimari karar kayıtlarını ve dokümantasyon sitesini sıfırdan kurdum.",
+          "72 tabloyu jQuery DataTables'tan kurum içi data grid'e taşıdım; iki legacy bağımlılığı kaldırdım."
+        ]
+      },
+      {
+        "when": "Ara 2022 — Ara 2024",
+        "title": "Rapider AI",
+        "where": "Frontend Developer · Remote",
+        "points": [
+          "Low-code yazılım platformunda responsive bileşenler ve UX iyileştirmeleri.",
+          "NgRx ile state management; modüler, çok projeli yapıya uçtan uca yeni bir admin modülü."
+        ]
+      },
+      {
+        "when": "Ağu — Eyl 2022",
+        "title": "Mergentech",
+        "where": "Frontend Developer (Stajyer) · Eskişehir",
+        "points": ["Angular ile form oluşturma uygulaması ve sürükle-bırak form editörü."]
+      },
+      {
+        "when": "2015 — 2022",
+        "title": "Bilgisayar Mühendisliği, Lisans",
+        "where": "Eskişehir Osmangazi Üniversitesi",
+        "points": []
+      }
+    ]
+  },
+  "skills": {
+    "title": "Yetkinlikler",
+    "items": [
+      {
+        "title": "Angular",
+        "body": "Angular 21, Signals, standalone, typed reactive forms, RxJS, lazy loading, guards, interceptors, change detection, CDK"
+      },
+      {
+        "title": "UI",
+        "body": "Design system, component library, light/dark tema, CSS custom properties, responsive UI, ApexCharts, Konva"
+      },
+      {
+        "title": "Veri ve entegrasyon",
+        "body": "REST, OpenAPI, SDK generation, JWT & refresh token, session management, i18n, PDF / Excel export"
+      },
+      {
+        "title": "Test ve kalite",
+        "body": "Karma, Jasmine, coverage, test planlama, regresyon baseline"
+      },
+      {
+        "title": "Süreç ve araçlar",
+        "body": "Git, monorepo, Jenkins, GitHub Actions, performans profilleme, mimari karar kayıtları, VitePress, Compodoc"
+      },
+      {
+        "title": "Diller",
+        "body": "TypeScript, JavaScript, HTML, SCSS · ayrıca Next.js / React"
+      }
+    ]
+  },
+  "services": {
+    "title": "Neler yapabilirim",
+    "note": "Freelance ve proje bazlı çalışmalar için.",
+    "items": [
+      {
+        "title": "Kurumsal web sitesi ve PWA",
+        "body": "Mobil uyumlu, hızlı, iki dilli siteler; form, randevu ve yönetim paneli gibi işletmeye özel akışlar."
+      },
+      {
+        "title": "Angular uygulama geliştirme",
+        "body": "Kurumsal panel ve iş uygulamaları: uçtan uca modül geliştirme, API entegrasyonu, oturum ve yetki yönetimi."
+      },
+      {
+        "title": "Performans ve modernizasyon",
+        "body": "Bundle analizi, lazy loading, Signals ve standalone geçişi, legacy bağımlılıkların temizlenmesi."
+      },
+      {
+        "title": "Design system ve component library",
+        "body": "Token tabanlı tema, light/dark, erişilebilir bileşenler ve dokümantasyon."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Birlikte çalışalım",
+    "body": "Bir proje, iş fırsatı ya da sadece Angular üzerine konuşmak için yazabilirsin. Genellikle bir iş günü içinde dönerim.",
+    "links": [
+      {
+        "label": "E-posta",
+        "href": "mailto:alif.calik@gmail.com",
+        "display": "alif.calik@gmail.com",
+        "external": false
+      },
+      {
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/in/alifuatcalik/",
+        "display": "in/alifuatcalik",
+        "external": true
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/alifuatcalik",
+        "display": "alifuatcalik",
+        "external": true
+      }
+    ]
+  }
+}
