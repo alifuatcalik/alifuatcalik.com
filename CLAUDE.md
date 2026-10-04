@@ -24,7 +24,7 @@ Ali Fuat Çalık'ın kişisel portföy sitesi. Angular 21 (standalone, Signals),
 | `npm run build` | Prerender build → `dist/alifuatcalik/browser` |
 
 ## Ortam notu
-Sistem npm'i 11.21 (11.3.0'daki `edgesOut` hatası nedeniyle yükseltildi); `packageManager` buna sabit. Node sürümü `.node-version` ile 22 (Cloudflare build de bunu kullanır). npm 12, Node 22.14'ü desteklemiyor — kullanma.
+Sistem npm'i 11.21 (11.3.0'daki `edgesOut` hatası nedeniyle yükseltildi); `packageManager` buna sabit. Node sürümü `.node-version` ile tam sabit 22.14.0 (Cloudflare build de bunu kullanır; yalnızca `22` yazınca Cloudflare en yeni 22.x'i kurmaya çalışıp başarısız olabiliyor). npm 12, Node 22.14'ü desteklemiyor — kullanma.
 
 ## İlgili
 UI kütüphanesi ayrı repoda: `~/Desktop/bzdk-ui` (adı değişecek, henüz yayınlanmadı). Site ilk aşamada kütüphanesiz; kütüphane hazır olunca geçilecek.
