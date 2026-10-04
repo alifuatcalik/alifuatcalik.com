@@ -1,0 +1,409 @@
+<title>Ali Fuat Çalık</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout: üst bar → hero (sol: kimlik, sağ: ng build raporu) → seçilmiş işler → deneyim zaman çizelgesi → yetkinlikler → hizmetler → iletişim.
+   İmza detay: Angular CLI build çıktısı biçiminde gerçek performans kazanımı (9,4 MB → 2,04 MB). */
+:root {
+  --bg: #F4F4F5;
+  --surface: #FFFFFF;
+  --raised: #FAFAFA;
+  --fg: #18181B;
+  --muted: #52525B;
+  --faint: #A1A1AA;
+  --line: #E4E4E7;
+  --accent: #7333CC;
+  --accent-soft: color-mix(in srgb, #7333CC 10%, transparent);
+  --good: #15803D;
+  --code-bg: #18181B;
+  --code-fg: #E4E4E7;
+  --code-dim: #8B8B95;
+  --font-display: 'Bricolage Grotesque', 'Geist', system-ui, sans-serif;
+  --font-body: 'Geist', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #09090B; --surface: #111113; --raised: #1C1C20; --fg: #EDEDEF; --muted: #A1A1AA; --faint: #71717A;
+    --line: #2C2C31; --accent: #B899FF; --accent-soft: color-mix(in srgb, #B899FF 14%, transparent); --good: #4ADE80;
+    --code-bg: #18181B; --code-fg: #E4E4E7; --code-dim: #8B8B95;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #09090B; --surface: #111113; --raised: #1C1C20; --fg: #EDEDEF; --muted: #A1A1AA; --faint: #71717A;
+  --line: #2C2C31; --accent: #B899FF; --accent-soft: color-mix(in srgb, #B899FF 14%, transparent); --good: #4ADE80;
+  --code-bg: #18181B; --code-fg: #E4E4E7; --code-dim: #8B8B95;
+  color-scheme: dark;
+}
+
+/* Dil: html[data-lang] → sadece o dildeki metin görünür */
+:root[data-lang="tr"] .en, :root[data-lang="en"] .tr { display: none !important; }
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; animation: none !important; } }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-inline: 24px; }
+@media (max-width: 600px) { .wrap { padding-inline: 16px; } }
+
+/* ── Üst bar ── */
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.top .wrap { display: flex; align-items: center; gap: 20px; height: 60px; }
+.mark { font-family: var(--font-display); font-weight: 800; font-size: 18px; letter-spacing: -0.02em; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+.mark i { width: 10px; height: 10px; border-radius: 3px; background: var(--accent); display: inline-block; transform: rotate(45deg); }
+.nav { display: flex; gap: 18px; margin-left: auto; font-size: 14px; }
+.nav a { text-decoration: none; color: var(--muted); }
+.nav a:hover { color: var(--fg); }
+.toggles { display: flex; gap: 6px; }
+.tg { font: 500 12px/1 var(--font-mono); padding: 7px 9px; border-radius: 7px; border: 1px solid var(--line); background: var(--surface); color: var(--fg); cursor: pointer; }
+.tg:hover { border-color: var(--faint); }
+.tg:focus-visible, .btn:focus-visible, .nav a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (max-width: 760px) { .nav { display: none; } .toggles { margin-left: auto; } }
+
+/* ── Hero ── */
+.hero { padding-block: 72px 56px; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 48px; align-items: center; }
+@media (max-width: 900px) { .hero .wrap { grid-template-columns: minmax(0, 1fr); gap: 32px; } .hero { padding-block: 40px 32px; } }
+.eyebrow { font: 500 12px/1 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); display: inline-flex; align-items: center; gap: 8px; }
+.eyebrow::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--good); box-shadow: 0 0 0 4px color-mix(in srgb, var(--good) 18%, transparent); }
+h1 { font-family: var(--font-display); font-weight: 800; font-size: clamp(40px, 6vw, 68px); line-height: 1.02; letter-spacing: -0.035em; margin: 18px 0 14px; text-wrap: balance; }
+.role { font-family: var(--font-display); font-weight: 500; font-size: clamp(20px, 2.4vw, 26px); color: var(--muted); margin: 0 0 20px; letter-spacing: -0.01em; }
+.role b { color: var(--fg); font-weight: 700; }
+.lede { color: var(--muted); max-width: 56ch; margin: 0 0 28px; }
+.cta { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 16px; border-radius: 9px; font-weight: 500; font-size: 15px; text-decoration: none; border: 1px solid var(--line); background: var(--surface); }
+.btn.primary { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.btn:hover { transform: translateY(-1px); }
+.btn { transition: transform .15s ease; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 24px; font-size: 14px; color: var(--muted); }
+
+/* ng build raporu */
+.build { background: var(--code-bg); color: var(--code-fg); border-radius: 14px; border: 1px solid #2C2C31; font: 13px/1.7 var(--font-mono); overflow: hidden; box-shadow: 0 24px 60px -24px rgb(0 0 0 / .35); min-width: 0; }
+.build-bar { display: flex; align-items: center; gap: 6px; padding: 10px 14px; border-bottom: 1px solid #2C2C31; color: var(--code-dim); font-size: 12px; }
+.build-bar span { width: 10px; height: 10px; border-radius: 50%; background: #2C2C31; }
+.build-bar em { margin-left: 8px; font-style: normal; }
+.build-body { padding: 16px 18px 18px; overflow-x: auto; }
+.build-body .cmd { color: var(--code-fg); }
+.build-body .cmd b { color: #B899FF; font-weight: 500; }
+.build-body .dim { color: var(--code-dim); }
+.row { display: grid; grid-template-columns: 9ch minmax(0,1fr) 9ch; gap: 12px; align-items: center; margin-top: 10px; }
+.bar { height: 10px; border-radius: 3px; background: #2C2C31; position: relative; overflow: hidden; }
+.bar i { position: absolute; inset: 0 auto 0 0; border-radius: 3px; }
+.bar.before i { width: 100%; background: #52525B; }
+.bar.after i { width: 21.7%; background: #B899FF; }
+.num { text-align: right; font-variant-numeric: tabular-nums; }
+.win { margin-top: 14px; padding-top: 12px; border-top: 1px dashed #2C2C31; display: flex; flex-wrap: wrap; gap: 4px 18px; }
+.win b { color: #86EFAC; font-weight: 500; }
+
+/* ── Bölümler ── */
+section.block { padding-block: 64px; border-top: 1px solid var(--line); }
+@media (max-width: 600px) { section.block { padding-block: 44px; } }
+.sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 28px; }
+h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(26px, 3.2vw, 36px); letter-spacing: -0.025em; margin: 0; line-height: 1.1; }
+.sec-note { color: var(--muted); font-size: 15px; max-width: 52ch; margin: 0; }
+
+/* Seçilmiş işler */
+.work { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 820px) { .work { grid-template-columns: minmax(0, 1fr); } }
+.case { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 22px; display: grid; gap: 12px; align-content: start; min-width: 0; }
+.case.feature { grid-column: 1 / -1; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 20px 32px; }
+@media (max-width: 820px) { .case.feature { grid-template-columns: minmax(0, 1fr); } }
+.case-top { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.org { font: 500 12px/1 var(--font-mono); color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+.chip { font: 500 11px/1 var(--font-mono); padding: 5px 8px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
+.chip.live { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 40%, transparent); background: var(--accent-soft); }
+.case h3 { font-family: var(--font-display); font-weight: 700; font-size: 22px; letter-spacing: -0.02em; margin: 0; line-height: 1.2; text-wrap: balance; }
+.case p { margin: 0; color: var(--muted); font-size: 15px; }
+.stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; align-content: start; }
+.stat { background: var(--raised); border: 1px solid var(--line); border-radius: 10px; padding: 14px; }
+.stat b { display: block; font-family: var(--font-display); font-weight: 700; font-size: 26px; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.stat span { font-size: 13px; color: var(--muted); }
+.stack { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
+.stack span { font: 12px/1 var(--font-mono); padding: 5px 8px; border-radius: 6px; background: var(--raised); border: 1px solid var(--line); color: var(--muted); }
+.case ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 15px; display: grid; gap: 6px; }
+
+/* Deneyim */
+.timeline { display: grid; gap: 0; }
+.job { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 24px; padding-block: 22px; border-bottom: 1px solid var(--line); }
+.job:first-child { padding-top: 0; }
+.job:last-child { border-bottom: 0; }
+@media (max-width: 700px) { .job { grid-template-columns: minmax(0, 1fr); gap: 6px; } }
+.when { font: 13px/1.5 var(--font-mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+.job h3 { font-family: var(--font-display); font-size: 20px; font-weight: 700; margin: 0 0 2px; letter-spacing: -0.015em; }
+.job .where { color: var(--muted); font-size: 14px; margin: 0 0 10px; }
+.job ul { margin: 0; padding-left: 18px; color: var(--muted); display: grid; gap: 6px; font-size: 15px; }
+
+/* Yetkinlikler */
+.skills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 900px) { .skills { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .skills { grid-template-columns: minmax(0, 1fr); } }
+.skill { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px; min-width: 0; }
+.skill h3 { font: 600 12px/1 var(--font-mono); text-transform: uppercase; letter-spacing: .07em; color: var(--accent); margin: 0 0 12px; }
+.skill p { margin: 0; color: var(--muted); font-size: 14.5px; }
+
+/* Hizmetler */
+.services { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 760px) { .services { grid-template-columns: minmax(0, 1fr); } }
+.svc { border: 1px solid var(--line); border-radius: 14px; padding: 22px; background: var(--surface); display: grid; gap: 8px; align-content: start; }
+.svc .n { font: 500 12px/1 var(--font-mono); color: var(--faint); }
+.svc h3 { font-family: var(--font-display); font-size: 20px; font-weight: 700; letter-spacing: -0.015em; margin: 0; }
+.svc p { margin: 0; color: var(--muted); font-size: 15px; }
+
+/* İletişim */
+.contact { background: var(--code-bg); color: var(--code-fg); border-radius: 18px; padding: clamp(28px, 5vw, 48px); display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 32px; align-items: end; }
+@media (max-width: 820px) { .contact { grid-template-columns: minmax(0, 1fr); } }
+.contact h2 { color: #FAFAFA; }
+.contact p { color: #A1A1AA; margin: 12px 0 0; max-width: 46ch; }
+.links { display: grid; gap: 8px; }
+.link { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 13px 16px; border-radius: 10px; border: 1px solid #2C2C31; text-decoration: none; color: #E4E4E7; font-size: 15px; min-width: 0; }
+.link:hover { border-color: #52525B; background: #1C1C20; }
+.link span:last-child { font: 13px var(--font-mono); color: #8B8B95; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.link:focus-visible { outline: 2px solid #B899FF; outline-offset: 2px; }
+
+footer { padding-block: 32px 48px; color: var(--faint); font-size: 13px; }
+footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="Ali Fuat Çalık"><i></i>alifuatcalik</a>
+    <nav class="nav" aria-label="Sayfa içi">
+      <a href="#work"><span class="tr">İşler</span><span class="en">Work</span></a>
+      <a href="#experience"><span class="tr">Deneyim</span><span class="en">Experience</span></a>
+      <a href="#services"><span class="tr">Hizmetler</span><span class="en">Services</span></a>
+      <a href="#contact"><span class="tr">İletişim</span><span class="en">Contact</span></a>
+    </nav>
+    <div class="toggles">
+      <button class="tg" id="lang" type="button" aria-label="Dili değiştir / Switch language">EN</button>
+      <button class="tg" id="theme" type="button" aria-label="Temayı değiştir / Toggle theme">◐</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow"><span class="tr">Yeni projelere açığım</span><span class="en">Open to new projects</span></span>
+        <h1>Ali Fuat Çalık</h1>
+        <p class="role"><b>Frontend Developer</b> · Angular</p>
+        <p class="lede">
+          <span class="tr">Angular üzerine 4 yıldır kurumsal ürünler geliştiriyorum. Büyük kod tabanlarını modernize etmeyi, yavaş uygulamaları hızlandırmayı ve ekiplerin üzerine güvenle geliştirebileceği temeller kurmayı seviyorum.</span>
+          <span class="en">I've spent 4 years building enterprise products with Angular. I like modernizing large codebases, making slow apps fast, and laying foundations teams can confidently build on.</span>
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="#contact"><span class="tr">İletişime geç</span><span class="en">Get in touch</span> →</a>
+          <a class="btn" href="#work"><span class="tr">İşlerime bak</span><span class="en">See my work</span></a>
+        </div>
+        <div class="meta">
+          <span>Isparta, <span class="tr">Türkiye</span><span class="en">Türkiye</span></span>
+          <span><span class="tr">Remote / Hibrit</span><span class="en">Remote / Hybrid</span></span>
+          <span>Angular 21 · Signals</span>
+        </div>
+      </div>
+
+      <figure class="build" aria-label="Noctua main bundle: 9.4 MB → 2.04 MB">
+        <div class="build-bar"><span></span><span></span><span></span><em>noctua — build report</em></div>
+        <div class="build-body">
+          <div class="cmd"><span class="dim">$</span> ng build <b>--stats-json</b></div>
+          <div class="dim" style="margin-top:10px">Initial chunk · main</div>
+          <div class="row"><span class="dim"><span class="tr">önce</span><span class="en">before</span></span><div class="bar before"><i></i></div><span class="num">9.40 MB</span></div>
+          <div class="row"><span><span class="tr">sonra</span><span class="en">after</span></span><div class="bar after"><i></i></div><span class="num">2.04 MB</span></div>
+          <div class="win">
+            <span><b>−78%</b> main bundle</span>
+            <span><b>3.5 MB → 772 KB</b> eager JS</span>
+            <span><b>3.3 s → 1.7 s</b> <span class="tr">açılış</span><span class="en">load</span></span>
+          </div>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Seçilmiş işler -->
+  <section class="block" id="work">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span class="tr">Seçilmiş işler</span><span class="en">Selected work</span></h2>
+        <p class="sec-note"><span class="tr">Ölçülebilir sonuç veren işler. Kurumsal projelerde ürün detayları genel tutuldu.</span><span class="en">Work with measurable outcomes. Product details of enterprise projects are kept general.</span></p>
+      </div>
+
+      <div class="work">
+        <article class="case feature">
+          <div style="display:grid;gap:12px;align-content:start">
+            <div class="case-top"><span class="org">Birtech · Noctua</span><span class="chip live">2025 —</span></div>
+            <h3><span class="tr">Kurumsal izleme platformunu hızlandırmak ve modernize etmek</span><span class="en">Speeding up and modernizing an enterprise monitoring platform</span></h3>
+            <p><span class="tr">Veri merkezleri için dört dile lokalize, büyük ölçekli bir Angular SPA. Sekiz modülü route bazlı lazy loading'e taşıdım, ağır script'leri ilk kullanıma erteledim; 50'den fazla sayfayı Signals, typed reactive form ve OpenAPI'den ürettiğim SDK desenine yeniden yazdım.</span><span class="en">A large Angular SPA for data-center monitoring, localized in four languages. I moved eight modules to route-level lazy loading, deferred heavy scripts to first use, and rewrote 50+ pages onto Signals, typed reactive forms and an SDK I generated from the OpenAPI spec.</span></p>
+            <div class="stack"><span>Angular 21</span><span>Signals</span><span>OpenAPI SDK</span><span>Karma · Jasmine</span><span>VitePress</span></div>
+          </div>
+          <div class="stats">
+            <div class="stat"><b>−78%</b><span>main bundle</span></div>
+            <div class="stat"><b>1.7 s</b><span class="tr">açılış (önce 3.3 s)</span><span class="en">load (was 3.3 s)</span></div>
+            <div class="stat"><b>700+</b><span class="tr">issue · 35 sürüm</span><span class="en">issues · 35 releases</span></div>
+            <div class="stat"><b>150+</b><span class="tr">test planı</span><span class="en">test plans</span></div>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="case-top"><span class="org">Birtech · Noctua</span></div>
+          <h3><span class="tr">Oturum yaşam döngüsü ve tek state katmanı</span><span class="en">Session lifecycle and a single state layer</span></h3>
+          <p><span class="tr">Altı servis üzerinde auto-login, uyarılı idle timeout, sessiz token yenileme, sekmeler arası senkronizasyon ve backend kesintileri için circuit breaker. Üç ayrı yerde tutulan state'i tek katmana taşıyıp tam sayfa reload kalıbını kaldırdım.</span><span class="en">Auto-login, idle timeout with warning, silent token refresh, cross-tab sync and a circuit breaker for backend outages across six services. I moved state kept in three places into one layer and removed full-page reloads.</span></p>
+          <div class="stack"><span>JWT</span><span>RxJS</span><span>Signals</span></div>
+        </article>
+
+        <article class="case">
+          <div class="case-top"><span class="org">Birtech · Noctua</span></div>
+          <h3><span class="tr">Enerji yönetimi ve KPI modülleri</span><span class="en">Energy management and KPI modules</span></h3>
+          <p><span class="tr">Enerji node'ları, maliyet kayıtları, PDU outlet bazlı tüketim, yedi grafik ve tablo tipinden oluşan raporlama seti ve KPI eşik yönetimini arayüz tarafında uçtan uca kurguladım.</span><span class="en">Designed end to end on the frontend: energy nodes, cost records, per-outlet PDU consumption, a reporting set of seven chart and table types, and KPI threshold management.</span></p>
+          <div class="stack"><span>ApexCharts</span><span>Data grid</span><span>CDK Drag &amp; Drop</span></div>
+        </article>
+
+        <article class="case">
+          <div class="case-top"><span class="org"><span class="tr">Açık kaynak · geliştiriliyor</span><span class="en">Open source · in progress</span></span><span class="chip live">Angular</span></div>
+          <h3><span class="tr">Angular component library</span><span class="en">Angular component library</span></h3>
+          <p><span class="tr">Signals tabanlı, 50'den fazla component; kendi renk paleti, light/dark tema sistemi, WCAG kontrast kontrolü ve ayrı bir demo uygulaması. Yakında public olacak.</span><span class="en">50+ Signals-based components with their own palette, light/dark theming, WCAG contrast checks and a separate demo app. Going public soon.</span></p>
+          <div class="stack"><span>Angular 21</span><span>Signals</span><span>Design tokens</span></div>
+        </article>
+
+        <article class="case">
+          <div class="case-top"><span class="org">Freelance · Ervam Su İnşaat</span></div>
+          <h3><span class="tr">Kurumsal web sitesi ve randevu sistemi</span><span class="en">Company website and appointment system</span></h3>
+          <p><span class="tr">Isparta'da hizmet veren bir inşaat firması için iki dilli, mobil uyumlu PWA. Talep formları WhatsApp mesajına dönüşüyor; randevu talepleri yönetim panelinden onaylanıyor.</span><span class="en">A bilingual, mobile-first PWA for a construction company in Isparta. Request forms turn into WhatsApp messages; appointment requests are approved from an admin panel.</span></p>
+          <div class="stack"><span>Next.js</span><span>React</span><span>Tailwind</span><span>PWA</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deneyim -->
+  <section class="block" id="experience">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span class="tr">Deneyim</span><span class="en">Experience</span></h2>
+        <a class="btn" href="#contact"><span class="tr">CV iste</span><span class="en">Request CV</span></a>
+      </div>
+      <div class="timeline">
+        <div class="job">
+          <div class="when"><span class="tr">Oca 2025 — Halen</span><span class="en">Jan 2025 — Present</span></div>
+          <div>
+            <h3>Birtech Teknoloji</h3>
+            <p class="where">Frontend Developer · Eskişehir (Remote)</p>
+            <ul>
+              <li><span class="tr">Main bundle'ı %78 küçülttüm; açılış süresini 3,3 sn'den 1,7 sn'ye indirdim.</span><span class="en">Cut the main bundle by 78%; brought load time from 3.3 s to 1.7 s.</span></li>
+              <li><span class="tr">OpenAPI şemasından typed TypeScript SDK üreten bir Node generator yazdım.</span><span class="en">Wrote a Node generator that produces a typed TypeScript SDK from the OpenAPI spec.</span></li>
+              <li><span class="tr">Unit test altyapısını, mimari karar kayıtlarını ve dokümantasyon sitesini sıfırdan kurdum.</span><span class="en">Set up unit testing, architecture decision records and the docs site from scratch.</span></li>
+              <li><span class="tr">72 tabloyu jQuery DataTables'tan kurum içi data grid'e taşıdım; iki legacy bağımlılığı kaldırdım.</span><span class="en">Migrated 72 tables from jQuery DataTables to an in-house data grid; removed two legacy dependencies.</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="job">
+          <div class="when"><span class="tr">Ara 2022 — Ara 2024</span><span class="en">Dec 2022 — Dec 2024</span></div>
+          <div>
+            <h3>Rapider AI</h3>
+            <p class="where">Frontend Developer · Remote</p>
+            <ul>
+              <li><span class="tr">Low-code yazılım platformunda responsive bileşenler ve UX iyileştirmeleri.</span><span class="en">Responsive components and UX improvements on a low-code software platform.</span></li>
+              <li><span class="tr">NgRx ile state management; modüler, çok projeli yapıya uçtan uca yeni bir admin modülü.</span><span class="en">State management with NgRx; built a new admin module end to end in a modular multi-project setup.</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="job">
+          <div class="when"><span class="tr">Ağu — Eyl 2022</span><span class="en">Aug — Sep 2022</span></div>
+          <div>
+            <h3>Mergentech</h3>
+            <p class="where"><span class="tr">Frontend Developer (Stajyer) · Eskişehir</span><span class="en">Frontend Developer (Intern) · Eskişehir</span></p>
+            <ul><li><span class="tr">Angular ile form oluşturma uygulaması ve sürükle-bırak form editörü.</span><span class="en">An Angular form builder and drag-and-drop form editor.</span></li></ul>
+          </div>
+        </div>
+        <div class="job">
+          <div class="when">2015 — 2022</div>
+          <div>
+            <h3><span class="tr">Bilgisayar Mühendisliği, Lisans</span><span class="en">B.Sc. Computer Engineering</span></h3>
+            <p class="where">Eskişehir Osmangazi <span class="tr">Üniversitesi</span><span class="en">University</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Yetkinlikler -->
+  <section class="block" id="skills">
+    <div class="wrap">
+      <div class="sec-head"><h2><span class="tr">Yetkinlikler</span><span class="en">Skills</span></h2></div>
+      <div class="skills">
+        <div class="skill"><h3>Angular</h3><p>Angular 21, Signals, standalone, typed reactive forms, RxJS, lazy loading, guards, interceptors, change detection, CDK</p></div>
+        <div class="skill"><h3>UI</h3><p><span class="tr">Design system, component library, light/dark tema, CSS custom properties, responsive UI, ApexCharts, Konva</span><span class="en">Design systems, component libraries, light/dark theming, CSS custom properties, responsive UI, ApexCharts, Konva</span></p></div>
+        <div class="skill"><h3><span class="tr">Veri ve entegrasyon</span><span class="en">Data &amp; integration</span></h3><p>REST, OpenAPI, SDK generation, JWT &amp; refresh token, session management, i18n, PDF / Excel export</p></div>
+        <div class="skill"><h3><span class="tr">Test ve kalite</span><span class="en">Testing &amp; quality</span></h3><p><span class="tr">Karma, Jasmine, coverage, test planlama, regresyon baseline</span><span class="en">Karma, Jasmine, coverage, test planning, regression baselines</span></p></div>
+        <div class="skill"><h3><span class="tr">Süreç ve araçlar</span><span class="en">Process &amp; tooling</span></h3><p>Git, monorepo, Jenkins, GitHub Actions, <span class="tr">performans profilleme, mimari karar kayıtları</span><span class="en">performance profiling, ADRs</span>, VitePress, Compodoc</p></div>
+        <div class="skill"><h3><span class="tr">Diller</span><span class="en">Languages</span></h3><p>TypeScript, JavaScript, HTML, SCSS · <span class="tr">ayrıca Next.js / React</span><span class="en">also Next.js / React</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hizmetler -->
+  <section class="block" id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span class="tr">Neler yapabilirim</span><span class="en">What I can do for you</span></h2>
+        <p class="sec-note"><span class="tr">Freelance ve proje bazlı çalışmalar için.</span><span class="en">For freelance and project-based work.</span></p>
+      </div>
+      <div class="services">
+        <div class="svc"><span class="n">01</span><h3><span class="tr">Kurumsal web sitesi ve PWA</span><span class="en">Company websites &amp; PWAs</span></h3><p><span class="tr">Mobil uyumlu, hızlı, iki dilli siteler; form, randevu ve yönetim paneli gibi işletmeye özel akışlar.</span><span class="en">Fast, mobile-first, bilingual sites with business-specific flows like forms, bookings and admin panels.</span></p></div>
+        <div class="svc"><span class="n">02</span><h3><span class="tr">Angular uygulama geliştirme</span><span class="en">Angular application development</span></h3><p><span class="tr">Kurumsal panel ve iş uygulamaları: uçtan uca modül geliştirme, API entegrasyonu, oturum ve yetki yönetimi.</span><span class="en">Enterprise dashboards and business apps: end-to-end modules, API integration, session and access management.</span></p></div>
+        <div class="svc"><span class="n">03</span><h3><span class="tr">Performans ve modernizasyon</span><span class="en">Performance &amp; modernization</span></h3><p><span class="tr">Bundle analizi, lazy loading, Signals ve standalone geçişi, legacy bağımlılıkların temizlenmesi.</span><span class="en">Bundle analysis, lazy loading, migration to Signals and standalone, removing legacy dependencies.</span></p></div>
+        <div class="svc"><span class="n">04</span><h3><span class="tr">Design system ve component library</span><span class="en">Design systems &amp; component libraries</span></h3><p><span class="tr">Token tabanlı tema, light/dark, erişilebilir bileşenler ve dokümantasyon.</span><span class="en">Token-based theming, light/dark, accessible components and documentation.</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- İletişim -->
+  <section class="block" id="contact">
+    <div class="wrap">
+      <div class="contact">
+        <div>
+          <h2><span class="tr">Birlikte çalışalım</span><span class="en">Let's work together</span></h2>
+          <p><span class="tr">Bir proje, iş fırsatı ya da sadece Angular üzerine konuşmak için yazabilirsin. Genellikle bir iş günü içinde dönerim.</span><span class="en">Reach out about a project, a role, or just to talk Angular. I usually reply within one business day.</span></p>
+        </div>
+        <div class="links">
+          <a class="link" href="mailto:alif.calik@gmail.com"><span>E-posta</span><span>alif.calik@gmail.com</span></a>
+          <a class="link" href="https://www.linkedin.com/in/alifuatcalik/" target="_blank" rel="noopener"><span>LinkedIn</span><span>in/alifuatcalik</span></a>
+          <a class="link" href="https://github.com/alifuatcalik" target="_blank" rel="noopener"><span>GitHub</span><span>alifuatcalik</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Ali Fuat Çalık</span>
+    <span>alifuatcalik.com</span>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const root = document.documentElement;
+  const store = { get: k => { try { return localStorage.getItem(k); } catch { return null; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch {} } };
+
+  // Dil
+  const langBtn = document.getElementById('lang');
+  const setLang = l => { root.dataset.lang = l; root.lang = l; langBtn.textContent = l === 'tr' ? 'EN' : 'TR'; store.set('afc-lang', l); };
+  setLang(store.get('afc-lang') || 'tr');
+  langBtn.addEventListener('click', () => setLang(root.dataset.lang === 'tr' ? 'en' : 'tr'));
+
+  // Tema (sistem → manuel)
+  const themeBtn = document.getElementById('theme');
+  const saved = store.get('afc-theme');
+  if (saved) root.dataset.theme = saved;
+  themeBtn.addEventListener('click', () => {
+    const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    root.dataset.theme = dark ? 'light' : 'dark';
+    store.set('afc-theme', root.dataset.theme);
+  });
+})();
+</script>
