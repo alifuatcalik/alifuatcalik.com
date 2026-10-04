@@ -34,6 +34,13 @@ describe('App', () => {
     const el = harness.routeNativeElement as HTMLElement;
     expect(el.querySelector('#work h2')?.textContent).toContain('Selected work');
     expect(el.querySelector('.header__lang')?.getAttribute('href')).toBe('/');
-    expect(TestBed.inject(DOCUMENT).documentElement.lang).toBe('en');
+    const doc = TestBed.inject(DOCUMENT);
+    expect(doc.documentElement.lang).toBe('en');
+    expect(doc.head.querySelector('link[rel="canonical"]')?.getAttribute('href')).toBe(
+      'https://alifuatcalik.com/en/',
+    );
+    expect(doc.head.querySelector('meta[property="og:image"]')?.getAttribute('content')).toBe(
+      'https://alifuatcalik.com/og-en.png',
+    );
   });
 });
