@@ -1,0 +1,97 @@
+<!doctype html>
+<!--
+  Open Graph kartı (1200×630). public/og-tr.png ve public/og-en.png bu dosyadan üretilir:
+  docs/og/render.sh  →  Chrome headless ile ?lang=tr / ?lang=en ekran görüntüsü.
+-->
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=block">
+<style>
+  :root {
+    --bg: #09090b;
+    --fg: #ededef;
+    --muted: #a1a1aa;
+    --line: #2c2c31;
+    --accent: #b899ff;
+    --good: #4ade80;
+    --code-bg: #18181b;
+    --code-fg: #e4e4e7;
+    --code-dim: #8b8b95;
+    --code-strong: #52525b;
+    --code-good: #86efac;
+    --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+    --font-body: 'Geist', system-ui, sans-serif;
+    --font-mono: 'Geist Mono', ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    background:
+      radial-gradient(900px 500px at 100% 0%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 70%),
+      var(--bg);
+    color: var(--fg);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+  .card { height: 100%; padding: 64px 72px; display: grid; grid-template-rows: auto 1fr auto; }
+  .mark { font: 800 26px/1 var(--font-display); letter-spacing: -0.02em; display: flex; align-items: center; gap: 12px; }
+  .mark i { width: 14px; height: 14px; border-radius: 4px; background: var(--accent); transform: rotate(45deg); }
+  .main { display: grid; grid-template-columns: 1fr 470px; gap: 56px; align-items: center; }
+  .eyebrow { font: 500 16px/1 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; gap: 12px; }
+  .eyebrow::before { content: ''; width: 10px; height: 10px; border-radius: 50%; background: var(--good); box-shadow: 0 0 0 5px color-mix(in srgb, var(--good) 18%, transparent); }
+  h1 { font: 800 84px/1 var(--font-display); letter-spacing: -0.04em; margin: 22px 0 18px; }
+  .role { font: 500 32px/1.2 var(--font-display); color: var(--muted); margin: 0; letter-spacing: -0.01em; }
+  .role b { color: var(--fg); font-weight: 700; }
+  .build { background: var(--code-bg); color: var(--code-fg); border: 1px solid var(--line); border-radius: 18px; font: 18px/1.6 var(--font-mono); overflow: hidden; box-shadow: 0 30px 80px -30px rgb(0 0 0 / .6); }
+  .bar { display: flex; align-items: center; gap: 8px; padding: 14px 18px; border-bottom: 1px solid var(--line); color: var(--code-dim); font-size: 15px; }
+  .bar span { width: 12px; height: 12px; border-radius: 50%; background: var(--line); }
+  .bar em { margin-left: 8px; font-style: normal; }
+  .body { padding: 22px 24px 24px; }
+  .dim { color: var(--code-dim); }
+  .flag { color: var(--accent); }
+  .row { display: grid; grid-template-columns: 7ch 1fr 8ch; gap: 14px; align-items: center; margin-top: 14px; }
+  .meter { height: 14px; border-radius: 4px; background: var(--line); position: relative; overflow: hidden; }
+  .meter i { position: absolute; inset: 0 auto 0 0; border-radius: 4px; background: var(--code-strong); }
+  .meter i.after { background: var(--accent); }
+  .num { text-align: right; }
+  .win { margin-top: 18px; padding-top: 14px; border-top: 1px dashed var(--line); display: flex; flex-wrap: wrap; gap: 4px 22px; }
+  .win b { color: var(--code-good); font-weight: 500; }
+  .foot { display: flex; justify-content: space-between; align-items: center; font: 500 20px/1 var(--font-mono); color: var(--muted); }
+  .foot b { color: var(--fg); font-weight: 500; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="mark"><i></i>alifuatcalik</div>
+    <div class="main">
+      <div>
+        <div class="eyebrow" data-i18n="eyebrow"></div>
+        <h1>Ali Fuat Çalık</h1>
+        <p class="role"><b>Frontend Developer</b> · Angular</p>
+      </div>
+      <div class="build">
+        <div class="bar"><span></span><span></span><span></span><em>noctua — build report</em></div>
+        <div class="body">
+          <div><span class="dim">$</span> ng build <span class="flag">--stats-json</span></div>
+          <div class="row"><span class="dim" data-i18n="before"></span><div class="meter"><i style="width:100%"></i></div><span class="num">9.40 MB</span></div>
+          <div class="row"><span data-i18n="after"></span><div class="meter"><i class="after" style="width:21.7%"></i></div><span class="num">2.04 MB</span></div>
+          <div class="win"><span><b>−78%</b> main bundle</span><span><b>3.3 s → 1.7 s</b> <span data-i18n="load"></span></span></div>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><b>alifuatcalik.com</b><span data-i18n="tagline"></span></div>
+  </div>
+<script>
+  const text = {
+    tr: { eyebrow: 'Yeni projelere açığım', before: 'önce', after: 'sonra', load: 'açılış', tagline: 'Performans · Modernizasyon · Design system' },
+    en: { eyebrow: 'Open to new projects', before: 'before', after: 'after', load: 'load', tagline: 'Performance · Modernization · Design systems' },
+  };
+  const lang = new URLSearchParams(location.search).get('lang') === 'en' ? 'en' : 'tr';
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach((el) => (el.textContent = text[lang][el.dataset.i18n]));
+</script>
+</body>
+</html>

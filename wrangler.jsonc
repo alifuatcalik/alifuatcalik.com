@@ -3,6 +3,8 @@
   "name": "alifuatcalik",
   "compatibility_date": "2026-10-01",
   "assets": {
-    "directory": "./dist/alifuatcalik/browser"
+    "directory": "./dist/alifuatcalik/browser",
+    // Olmayan adreslerde public/404.html, 404 durum koduyla
+    "not_found_handling": "404-page"
   }
 }

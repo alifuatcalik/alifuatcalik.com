@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <title>404 — Ali Fuat Çalık</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Geist:wght@400;500&family=Geist+Mono:wght@500&display=swap">
+  <!-- Statik sayfa: Worker assets `not_found_handling: "404-page"` ile 404 durum koduyla sunulur. Token'lar styles.scss ile aynı. -->
+  <style>
+    :root {
+      --bg: #f4f4f5; --surface: #ffffff; --fg: #18181b; --muted: #52525b; --line: #e4e4e7; --accent: #7333cc;
+      --font-display: 'Bricolage Grotesque', 'Geist', system-ui, sans-serif;
+      --font-body: 'Geist', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      --font-mono: 'Geist Mono', ui-monospace, Menlo, Consolas, monospace;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #09090b; --surface: #111113; --fg: #ededef; --muted: #a1a1aa; --line: #2c2c31; --accent: #b899ff; color-scheme: dark; }
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px 16px; background: var(--bg); color: var(--fg); font: 16px/1.6 var(--font-body); -webkit-font-smoothing: antialiased; }
+    main { max-width: 560px; }
+    .code { font: 500 13px/1 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+    h1 { font: 800 clamp(36px, 7vw, 56px)/1.05 var(--font-display); letter-spacing: -0.035em; margin: 14px 0 12px; }
+    p { color: var(--muted); margin: 0 0 6px; }
+    .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+    a { display: inline-flex; padding: 11px 16px; border-radius: 9px; border: 1px solid var(--line); background: var(--surface); color: var(--fg); font-weight: 500; font-size: 15px; text-decoration: none; }
+    a:first-child { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="code">404</div>
+    <h1>Sayfa bulunamadı</h1>
+    <p>Aradığın sayfa taşınmış ya da hiç var olmamış olabilir.</p>
+    <p lang="en">This page doesn't exist — it may have moved or never existed.</p>
+    <div class="links">
+      <a href="/">Ana sayfa →</a>
+      <a href="/en/" lang="en" hreflang="en">English home</a>
+    </div>
+  </main>
+</body>
+</html>
