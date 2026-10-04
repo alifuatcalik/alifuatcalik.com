@@ -24,7 +24,7 @@ Ali Fuat Çalık'ın kişisel portföy sitesi. Angular 21 (standalone, Signals),
 | `npm run build` | Prerender build → `dist/alifuatcalik/browser` |
 
 ## Ortam notu
-Sistemdeki npm 11.3.0 `npm install`'da `Cannot read properties of null (reading 'edgesOut')` hatası veriyor. Kurulum `npx -y npm@11 install` ile yapıldı (11.21). Kalıcı çözüm: kullanıcı `npm i -g npm@11` çalıştırır. npm 12, Node 22.14'ü desteklemiyor — kullanma.
+Sistem npm'i 11.21 (11.3.0'daki `edgesOut` hatası nedeniyle yükseltildi); `packageManager` buna sabit. Node sürümü `.node-version` ile 22 (Cloudflare build de bunu kullanır). npm 12, Node 22.14'ü desteklemiyor — kullanma.
 
 ## İlgili
 UI kütüphanesi ayrı repoda: `~/Desktop/bzdk-ui` (adı değişecek, henüz yayınlanmadı). Site ilk aşamada kütüphanesiz; kütüphane hazır olunca geçilecek.

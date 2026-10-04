@@ -22,7 +22,7 @@
 5. [x] **i18n:** metinler `src/app/content/i18n/tr.json` + `en.json` (`en`'in şekli `tr`'ye göre build'de denetlenir); `/` = TR, `/en` = EN, ikisi de prerender. Dil adresten okunur (`LanguageService`), header'da TR/EN linki
 6. [ ] **Tema:** light/dark (sistem + manuel), seçim `localStorage`'da
 7. [ ] **SEO & paylaşım:** `<title>`, meta description, Open Graph görseli, `hreflang`, `sitemap.xml`, `robots.txt`, favicon
-8. [ ] **Yayın:** Cloudflare Pages ← GitHub repo; build komutu `npm run build`, çıktı `dist/alifuatcalik/browser`; custom domain `alifuatcalik.com` + `www` yönlendirmesi
+8. [ ] **Yayın:** Cloudflare **Worker** (statik assets, `wrangler.jsonc`) — Pages yerine; Cloudflare'ın yeni akışı Worker açıyor. `.node-version` = 22, `packageManager` = npm@11.21.0. Cloudflare Pages ← GitHub repo; build komutu `npm run build`, çıktı `dist/alifuatcalik/browser`; custom domain `alifuatcalik.com` + `www` yönlendirmesi
 9. [ ] **E-posta (isteğe bağlı):** Cloudflare Email Routing → `ali@alifuatcalik.com` → Gmail
 
 ## Açık sorular (kullanıcıya)
